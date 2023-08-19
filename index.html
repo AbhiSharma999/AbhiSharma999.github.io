@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+
+            <label> 
+                <span><i class="fa-brands fa-html5"></i> HTML </span>
+                <span>
+                <button id="dec-font-btn"> - </button>
+                <button id="inc-font-btn"> + </button> 
+                <button id="html-clear-btn"> Clear </button>
+                </span>
+            </label> 
+            <textarea class="code-editor" id="html-code" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+
+            <label> <span> <i class="fa-brands fa-css3-alt"></i> CSS </span> <button id="css-clear-btn"> Clear </button></label>
+            <textarea class="code-editor" id="css-code" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+
+            <label> <span> <i class="fa-brands fa-js"></i> JavaScript </span> <button id="js-clear-btn"> Clear </button> </label>
+            <textarea class="code-editor" id="js-code" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+
+            
+        </div>
+
+        <div class="right">
+            <label> <span><i class="fa-solid fa-play"></i> Output </span> </label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
